@@ -24,7 +24,7 @@ import {
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Loader2, Upload, Cube } from 'lucide-react';
+import { Loader2, Upload, Box } from 'lucide-react'; // Changed Cube to Box
 import { useToast } from '@/hooks/use-toast';
 
 const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5MB
@@ -134,7 +134,7 @@ export const ModelGenerator: FC = () => {
     <Card className="shadow-lg">
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
-          <Cube className="h-6 w-6 text-primary" />
+          <Box className="h-6 w-6 text-primary" /> {/* Changed Cube to Box */}
           AI 3D Model & Texture Generator
         </CardTitle>
       </CardHeader>
@@ -227,7 +227,7 @@ export const ModelGenerator: FC = () => {
                   <CardContent>
                      {/* Placeholder for 3D viewer */}
                     <div className="aspect-video bg-muted rounded-md flex items-center justify-center text-muted-foreground">
-                      <Cube className="h-16 w-16 opacity-50" />
+                      <Box className="h-16 w-16 opacity-50" /> {/* Changed Cube to Box */}
                       <span className="ml-2">(3D Model Placeholder)</span>
                     </div>
                     <Button variant="link" className="mt-2 p-0 h-auto" >
