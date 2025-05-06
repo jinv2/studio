@@ -12,18 +12,18 @@ import {z} from 'genkit';
 const GenerateStoryboardInputSchema = z.object({
   scriptOutline: z
     .string()
-    .describe('The script outline to generate the storyboard from.'),
+    .describe('用于生成故事板的脚本大纲。'),
 });
 export type GenerateStoryboardInput = z.infer<typeof GenerateStoryboardInputSchema>;
 
 const GenerateStoryboardOutputSchema = z.object({
   storyboard: z.array(
     z.object({
-      sceneDescription: z.string().describe('Description of the scene.'),
-      cameraAngle: z.string().describe('Suggested camera angle for the scene.'),
-      sceneLayout: z.string().describe('Suggested scene layout.'),
+      sceneDescription: z.string().describe('场景描述。'),
+      cameraAngle: z.string().describe('建议的场景摄像机角度。'),
+      sceneLayout: z.string().describe('建议的场景布局。'),
     })
-  ).describe('The generated storyboard.'),
+  ).describe('生成的故事板。'),
 });
 export type GenerateStoryboardOutput = z.infer<typeof GenerateStoryboardOutputSchema>;
 
@@ -35,12 +35,12 @@ const prompt = ai.definePrompt({
   name: 'generateStoryboardPrompt',
   input: {schema: GenerateStoryboardInputSchema},
   output: {schema: GenerateStoryboardOutputSchema},
-  prompt: `You are a professional storyboard artist. Based on the provided script outline, generate a storyboard with suggested camera angles and scene layouts for each scene.
+  prompt: `你是一位专业的故事板艺术家。根据提供的脚本大纲，为每个场景生成一个包含建议摄像机角度和场景布局的故事板。
 
-Script Outline:
+脚本大纲:
 {{scriptOutline}}
 
-Storyboard:
+故事板:
 `,
 });
 

@@ -7,7 +7,7 @@ export const Header: FC = () => {
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <Clapperboard className="h-8 w-8" />
-          <h1 className="text-2xl font-bold">AI Film Studio</h1>
+          <h1 className="text-2xl font-bold">AI 电影工作室</h1>
         </div>
         <div className="text-sm text-right">
           <p className="font-semibold">天算AI科技研发实验室</p>

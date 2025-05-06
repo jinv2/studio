@@ -27,7 +27,7 @@ import { useToast } from '@/hooks/use-toast';
 
 const FormSchema = z.object({
   scriptOutline: z.string().min(10, {
-    message: 'Script outline must be at least 10 characters.',
+    message: '脚本大纲必须至少包含 10 个字符。',
   }),
 });
 
@@ -54,15 +54,15 @@ export const StoryboardGenerator: FC = () => {
       const result = await generateStoryboard(input);
       setStoryboardResult(result);
       toast({
-        title: "Storyboard Generated",
-        description: "AI has successfully generated the storyboard.",
+        title: "故事板已生成",
+        description: "AI 已成功生成故事板。",
       });
     } catch (error) {
       console.error('Error generating storyboard:', error);
       toast({
         variant: "destructive",
-        title: "Error",
-        description: "Failed to generate storyboard. Please try again.",
+        title: "错误",
+        description: "生成故事板失败。请重试。",
       });
     } finally {
       setIsLoading(false);
@@ -74,7 +74,7 @@ export const StoryboardGenerator: FC = () => {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Film className="h-6 w-6 text-primary" />
-          AI Storyboard Generator
+          AI 故事板生成器
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -85,17 +85,16 @@ export const StoryboardGenerator: FC = () => {
               name="scriptOutline"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Script Outline</FormLabel>
+                  <FormLabel>脚本大纲</FormLabel>
                   <FormControl>
                     <Textarea
-                      placeholder="Enter your script outline here..."
+                      placeholder="在此输入您的脚本大纲..."
                       className="resize-y min-h-[150px]"
                       {...field}
                     />
                   </FormControl>
                   <FormDescription>
-                    Provide a detailed outline of your script. The AI will
-                    suggest scenes, camera angles, and layouts.
+                    提供您脚本的详细大纲。AI 将建议场景、摄像机角度和布局。
                   </FormDescription>
                   <FormMessage />
                 </FormItem>
@@ -105,10 +104,10 @@ export const StoryboardGenerator: FC = () => {
               {isLoading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Generating...
+                  生成中...
                 </>
               ) : (
-                'Generate Storyboard'
+                '生成故事板'
               )}
             </Button>
           </form>
@@ -116,24 +115,24 @@ export const StoryboardGenerator: FC = () => {
 
         {storyboardResult && (
           <div className="mt-8 space-y-6">
-            <h3 className="text-xl font-semibold">Generated Storyboard:</h3>
+            <h3 className="text-xl font-semibold">生成的故事板：</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {storyboardResult.storyboard.map((scene, index) => (
                 <Card key={index} className="bg-secondary shadow-sm">
                   <CardHeader>
-                    <CardTitle className="text-lg">Scene {index + 1}</CardTitle>
+                    <CardTitle className="text-lg">场景 {index + 1}</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-3 text-sm">
                      <p>
-                      <strong>Scene:</strong> {scene.sceneDescription}
+                      <strong>场景描述：</strong> {scene.sceneDescription}
                     </p>
                     <div className="flex items-center gap-2 text-muted-foreground">
                        <Camera className="h-4 w-4 text-accent" />
-                      <span>{scene.cameraAngle}</span>
+                      <span>摄像机角度：{scene.cameraAngle}</span>
                     </div>
                     <div className="flex items-center gap-2 text-muted-foreground">
                        <LayoutGrid className="h-4 w-4 text-accent" />
-                      <span>{scene.sceneLayout}</span>
+                      <span>场景布局：{scene.sceneLayout}</span>
                     </div>
 
                   </CardContent>

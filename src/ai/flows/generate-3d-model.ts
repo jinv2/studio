@@ -15,9 +15,9 @@ const Generate3DModelInputSchema = z.object({
   conceptArtDataUri: z
     .string()
     .describe(
-      "A 2D concept art image, as a data URI that must include a MIME type and use Base64 encoding. Expected format: 'data:<mimetype>;base64,<encoded_data>'."
+      "一张 2D 概念艺术图，格式为数据 URI，必须包含 MIME 类型并使用 Base64 编码。预期格式：'data:<mimetype>;base64,<encoded_data>'。"
     ),
-  modelDescription: z.string().describe('Detailed description of the 3D model to generate.'),
+  modelDescription: z.string().describe('要生成的 3D 模型的详细描述。'),
 });
 export type Generate3DModelInput = z.infer<typeof Generate3DModelInputSchema>;
 
@@ -25,12 +25,12 @@ const Generate3DModelOutputSchema = z.object({
   modelDataUri: z
     .string()
     .describe(
-      'The generated 3D model, as a data URI that must include a MIME type and use Base64 encoding. Expected format: \'data:<mimetype>;base64,<encoded_data>\'.' 
+      '生成的 3D 模型，格式为数据 URI，必须包含 MIME 类型并使用 Base64 编码。预期格式：\'data:<mimetype>;base64,<encoded_data>\'。'
     ),
   textureDataUri: z
     .string()
     .describe(
-      'The generated texture, as a data URI that must include a MIME type and use Base64 encoding. Expected format: \'data:<mimetype>;base64,<encoded_data>\'.' 
+      '生成的纹理，格式为数据 URI，必须包含 MIME 类型并使用 Base64 编码。预期格式：\'data:<mimetype>;base64,<encoded_data>\'。'
     ),
 });
 export type Generate3DModelOutput = z.infer<typeof Generate3DModelOutputSchema>;
@@ -43,10 +43,10 @@ const prompt = ai.definePrompt({
   name: 'generate3DModelPrompt',
   input: {schema: Generate3DModelInputSchema},
   output: {schema: Generate3DModelOutputSchema},
-  prompt: `You are an expert 3D modeler. Generate a 3D model and texture based on the provided concept art and description. Return the 3D model and the texture as data URIs.
+  prompt: `你是一位专业的 3D 建模师。根据提供的概念艺术图和描述生成一个 3D 模型和纹理。以数据 URI 的形式返回 3D 模型和纹理。
 
-Concept Art: {{media url=conceptArtDataUri}}
-Description: {{{modelDescription}}}`,
+概念艺术图：{{media url=conceptArtDataUri}}
+描述：{{{modelDescription}}}`,
 });
 
 const generate3DModelFlow = ai.defineFlow(
@@ -58,7 +58,7 @@ const generate3DModelFlow = ai.defineFlow(
   async input => {
     //In the future, we could call a 3D generation service here to create the model.
     //Since we can't do that yet, we'll just return a dummy value.
-    console.log('Running generate3DModelFlow with input', input);
+    console.log('运行 generate3DModelFlow，输入为', input); // Translated log message
     const {output} = await prompt(input);
     return output!;
   }

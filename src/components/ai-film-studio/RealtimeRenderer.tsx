@@ -15,7 +15,7 @@ export const RealtimeRenderer: FC = () => {
       <CardHeader>
         <CardTitle className="flex items-center gap-2">
           <Eye className="h-6 w-6 text-primary" />
-          Real-time Rendering Preview
+          实时渲染预览
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -23,7 +23,7 @@ export const RealtimeRenderer: FC = () => {
            {/* Placeholder Image - Replace with actual 3D render canvas */}
            <Image
               src="https://picsum.photos/seed/render/600/338"
-              alt="Real-time render preview placeholder"
+              alt="实时渲染预览占位符"
               width={600}
               height={338}
               className="object-cover"
@@ -31,17 +31,17 @@ export const RealtimeRenderer: FC = () => {
            />
         </div>
         <p className="text-muted-foreground text-sm mb-4">
-          This area will display a real-time preview of your scene, reflecting changes in lighting, textures, and animations instantly. (Placeholder UI)
+          该区域将显示场景的实时预览，即时反映光照、纹理和动画的变化。（占位符界面）
         </p>
         <div className="flex space-x-2">
           <Button variant="outline" size="sm">
-            <Play className="mr-2 h-4 w-4" /> Play
+            <Play className="mr-2 h-4 w-4" /> 播放
           </Button>
           <Button variant="outline" size="sm">
-            <Pause className="mr-2 h-4 w-4" /> Pause
+            <Pause className="mr-2 h-4 w-4" /> 暂停
           </Button>
            <Button variant="outline" size="sm">
-            <RotateCcw className="mr-2 h-4 w-4" /> Reset View
+            <RotateCcw className="mr-2 h-4 w-4" /> 重置视图
           </Button>
         </div>
       </CardContent>

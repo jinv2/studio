@@ -8,7 +8,7 @@ export default function Home() {
     <div className="space-y-12">
       {/* AI Storyboard Section */}
       <section aria-labelledby="storyboard-heading">
-         <h2 id="storyboard-heading" className="sr-only">AI Storyboard Generator</h2>
+         <h2 id="storyboard-heading" className="sr-only">AI 故事板生成器</h2>
         <StoryboardGenerator />
       </section>
 
@@ -16,7 +16,7 @@ export default function Home() {
 
       {/* 3D Model Generation Section */}
       <section aria-labelledby="model-gen-heading">
-        <h2 id="model-gen-heading" className="sr-only">AI 3D Model Generator</h2>
+        <h2 id="model-gen-heading" className="sr-only">AI 3D 模型生成器</h2>
         <ModelGenerator />
       </section>
 
@@ -24,7 +24,7 @@ export default function Home() {
 
       {/* Real-time Rendering Section */}
       <section aria-labelledby="renderer-heading">
-         <h2 id="renderer-heading" className="sr-only">Real-time Rendering Preview</h2>
+         <h2 id="renderer-heading" className="sr-only">实时渲染预览</h2>
         <RealtimeRenderer />
       </section>
     </div>
