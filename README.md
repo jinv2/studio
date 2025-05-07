@@ -16,6 +16,20 @@
 
 ➡️ **[https://jinv2.github.io](https://jinv2.github.io)** ⬅️
 
+---
+## 💖 支持 AI 电影工作室 (Support AI Film Studio)
+
+如果您觉得 **AI 电影工作室** 这个项目对您有所启发，或者您看好其在简化电影制作流程方面的潜力，并希望支持我们持续开发、维护和扩展其功能，欢迎通过以下方式表达您的支持：
+
+*   **通过 PayPal.Me 快速捐款：**
+    [https://paypal.me/jinv2](https://paypal.me/jinv2)
+
+    [![PayPal.Me Donate Button](https://img.shields.io/badge/PayPal-Donate-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/jinv2)
+
+您的支持将帮助我们投入更多资源用于新功能的研发、模型的优化以及应用的维护，让 AI 更好地服务于创意产业！
+
+---
+
 ## 关于本仓库
 
 本仓库包含 AI 电影工作室应用程序的源代码。项目基于 [Next.js](https://nextjs.org/) 构建（很可能是在 Firebase Studio / Project IDX 环境中初始化）。
